@@ -45,9 +45,9 @@ trigger RollUpTotalSales on Opportunity (after insert, after update, after delet
 
     if(!accIds.isEmpty()){
 
-        List<Account> accListStandard = [SELECT Id, Total_Sales_Standard_Wood__c, Total_Sales_Recycled_Wood__c , (SELECT Id, Amount, Name, Wood__c FROM Opportunities WHERE Wood_c = 'Standard') FROM Account WHERE Id IN: accIds];
+        List<Account> accListStandard = [SELECT Id, Total_Sales_Standard_Wood__c, Total_Sales_Recycled_Wood__c , (SELECT Id, Amount, Name, Wood__c FROM Opportunities WHERE Wood__c = 'Standard') FROM Account WHERE Id IN: accIds];
 
-        List<Account> accListRecycled = [SELECT Id, Total_Sales_Standard_Wood__c, Total_Sales_Recycled_Wood__c , (SELECT Id, Amount, Name, Wood__c FROM Opportunities WHERE Wood_c = 'Recycled') FROM Account WHERE Id IN: accIds];
+        List<Account> accListRecycled = [SELECT Id, Total_Sales_Standard_Wood__c, Total_Sales_Recycled_Wood__c , (SELECT Id, Amount, Name, Wood__c FROM Opportunities WHERE Wood__c = 'Recycled') FROM Account WHERE Id IN: accIds];
 
         List<Account> accListToUpdate = new List<Account>();
 
