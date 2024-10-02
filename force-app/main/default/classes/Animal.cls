@@ -7,74 +7,80 @@ public inherited sharing class Animal {
     }
 
     public void makeNoise() {
-        if (animalType == 'Lion') {
+        switch on animalType {
+          when 'Lion' {
             roar();
-        }
-        else if (animalType == 'Cat') {
+          }
+          when 'Cat' {
             meow();
-        }
-        else if (animalType == 'Horse') {
+          }
+          when 'Horse' {
             neigh();
-        }
-        else if (animalType == 'Alligator') {
+          }
+          when 'Alligator' {
             hiss();
-        }
-        else if (animalType == 'Bear') {
+          }
+          when 'Bear' {
             growl();
-        }
-        else if (animalType == 'Cow') {
+          }
+          when 'Cow' {
             moo();
-        }
-        else if (animalType == 'Dog') {
+          }
+          when 'Dog' {
             bark();
+          }
         }
     }
 
     public void move() {
-        if (animalType == 'Lion') {
+        switch on animalType {
+          when 'Lion' {
             run();
-        }
-        else if (animalType == 'Cat') {
+          }
+          when 'Cat' {
             walk();
-        }
-        else if (animalType == 'Horse') {
+            }
+          when 'Horse' {
             slide();
-        }
-        else if (animalType == 'Alligator') {
+          }
+          when 'Alligator' {
             hiss();
-        }
-        else if (animalType == 'Bear') {
+            }
+          when 'Bear' {
             walk();
-        }
-        else if (animalType == 'Cow') {
+          }
+          when 'Cow' {
             walk();
-        }
-        else if (animalType == 'Dog') {
+            }
+          when 'Dog' {
             run();
+          }
         }
     }
 
     public void swim() {
-        if (animalType == 'Lion') {
-            doSwim();
-        }
-        else if (animalType == 'Cat') {
-            // ignore, cannot swim
-        }
-        else if (animalType == 'Horse') {
-            // ignore, cannot swim
-        }
-        else if (animalType == 'Alligator') {
-            doSwim();
-        }
-        else if (animalType == 'Bear') {
-            doSwim();
-        }
-        else if (animalType == 'Cow') {
-            // ignore, cannot swim
-        }
-        else if (animalType == 'Dog') {
-            doSwim();
+        switch on animalType {
+            when 'Lion' {
+                doSwim();
+            }
+            when 'Cat' {
+                // ignore, cannot swim
+            }
+            when 'Horse' {
+                // ignore, cannot swim
+            }
+            when 'Alligator' {
+                doSwim();
+            }
+            when 'Bear' {
+                doSwim();
+            }
+            when 'Cow' {
+                // ignore, cannot swim
+            }
+            when 'Dog' {
+                doSwim();
+            }
         }
     }
 
