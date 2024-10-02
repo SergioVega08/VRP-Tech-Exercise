@@ -1,0 +1,9 @@
+<template>
+        <lightning-vertical-navigation-section label="Contacts">
+            <template for:each={contacts} for:item="contact">
+                <lightning-vertical-navigation-item key={contact.Id} label={contact.Name}
+                    name={contact.Id} onclick={onclickhandler}>
+                </lightning-vertical-navigation-item>
+            </template>
+        </lightning-vertical-navigation-section>
+</template>

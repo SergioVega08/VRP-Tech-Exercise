@@ -1,0 +1,32 @@
+<template>
+    <!-- <lightning-card title="Account List">
+        <div class="slds-m-around_medium">
+            <lightning-datatable
+                key-field="Id"
+                data={accounts}
+                columns={columns}
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </div>
+    </lightning-card> -->
+   
+    <lightning-layout>
+
+        <lightning-layout-item padding="around-small" flexibility="auto">
+            <lightning-vertical-navigation>
+                <lightning-vertical-navigation-section label="Accounts">
+                    <template for:each={accounts} for:item="account">
+                        <lightning-vertical-navigation-item key={account.Id} label={account.Name}
+                            name={account.Id} onclick={onclickhandler}>
+                        </lightning-vertical-navigation-item>
+                    </template>
+                </lightning-vertical-navigation-section>
+            </lightning-vertical-navigation>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" flexibility="auto">
+            <c-contact-list></c-contact-list>
+        </lightning-layout-item>
+
+    </lightning-layout>           
+</template>
