@@ -4,9 +4,10 @@ import getContactsByAccountId from '@salesforce/apex/AccountController.getContac
 export default class ContactList extends LightningElement {
 
     @api accountId;
-
     contacts;
-    @wire(getContactsByAccountId, {accountId})
+    error;
+
+    @wire(getContactsByAccountId, {accountId: '$accountId'})
         wiredContacts({ error, data }) {
             if (data) {
                 this.contacts = data;

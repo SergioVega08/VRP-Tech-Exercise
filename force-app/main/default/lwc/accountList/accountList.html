@@ -1,17 +1,5 @@
 <template>
-    <!-- <lightning-card title="Account List">
-        <div class="slds-m-around_medium">
-            <lightning-datatable
-                key-field="Id"
-                data={accounts}
-                columns={columns}
-                onrowaction={handleRowAction}>
-            </lightning-datatable>
-        </div>
-    </lightning-card> -->
-   
     <lightning-layout>
-
         <lightning-layout-item padding="around-small" flexibility="auto">
             <lightning-vertical-navigation>
                 <lightning-vertical-navigation-section label="Accounts">
@@ -25,7 +13,7 @@
         </lightning-layout-item>
 
         <lightning-layout-item padding="around-small" flexibility="auto">
-            <c-contact-list></c-contact-list>
+            <c-contact-list account-id ={accountId}></c-contact-list>
         </lightning-layout-item>
 
     </lightning-layout>           

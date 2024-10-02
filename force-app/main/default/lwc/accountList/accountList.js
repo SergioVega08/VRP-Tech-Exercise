@@ -1,21 +1,11 @@
 import { LightningElement, wire, api} from 'lwc';
 import getAccounts from '@salesforce/apex/AccountController.getAccounts';
 
-const COLUMNS = [
-    { 
-        label: 'Account Name', 
-        fieldName: 'Name',
-        sortable: true,
-        cellAttributes: { alignment: 'left' },
-        type: 'text'
-    }
-]
 export default class AccountList extends LightningElement {
 
     accounts;  
-    columns = COLUMNS;
-    @api accountId;
-
+    accountId;
+    
     @wire (getAccounts)
     wiredAccounts({ error, data }) {
         if (data) {
@@ -29,6 +19,6 @@ export default class AccountList extends LightningElement {
 
     onclickhandler(event){
         this.template.querySelector('c-contact-list').accountId = event.target.name;
-        console.log('Account Id:' + event.target.name);
+        //console.log('Account Id:' + event.target.name);
     }
 }
